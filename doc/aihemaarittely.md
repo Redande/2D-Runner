@@ -3,12 +3,12 @@ Aihe: Peli, jossa hahmo juoksee tasoja läpi. Hahmo liikkuu automaattisesti oike
 Käyttäjä: Pelaaja
 
 Toiminnot:
--Tason valitseminen
--Pelin aloittaminen valitussa tasossa
--Hyppääminen
--Uudelleenaloittaminen pelin päättymisen jälkeen
--Highscorejen katsominen?
--Power-uppejen käyttö?
+* Tason valitseminen
+* Pelin aloittaminen valitussa tasossa
+* Hyppääminen
+* Uudelleenaloittaminen pelin päättymisen jälkeen
+* Highscorejen katsominen?
+* Power-uppejen käyttö?
 
 Laajennusmahdollisuudet jos aikaa jää yli:
 
