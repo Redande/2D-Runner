@@ -9,6 +9,6 @@ package runnerpeli.runnerpeli.logiikka;
  *
  * @author Redande
  */
-public class Maa {
+public class Taso {
     
 }
