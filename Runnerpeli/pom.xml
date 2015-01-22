@@ -48,10 +48,10 @@
                 <version>0.30</version>
                 <configuration>
                     <targetClasses>
-                        <param>runnerpeli.logiikka.*</param>
+                        <param>runnerpeli.runnerpeli.logiikka.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>runnerpeli.logiikka.*</param>
+                        <param>runnerpeli.runnerpeli.logiikka.*</param>
                     </targetTests>
                 </configuration>
             </plugin>
