@@ -7,6 +7,7 @@ package runnerpeli.runnerpeli.logiikka;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,6 +18,8 @@ import static org.junit.Assert.*;
  * @author Redande
  */
 public class SovelluslogiikkaTest {
+    
+    Sovelluslogiikka sovelluslogiikka;
     
     public SovelluslogiikkaTest() {
     }
@@ -31,16 +34,16 @@ public class SovelluslogiikkaTest {
     
     @Before
     public void setUp() {
+        this.sovelluslogiikka = new Sovelluslogiikka();
     }
     
     @After
     public void tearDown() {
     }
-
-    @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
+    @Test
+    public void toimiikoKonstruktoriJaGetterit() {
+        Assert.assertNotNull(sovelluslogiikka.getHahmo());
+        Assert.assertNotNull(sovelluslogiikka.getTaso());
+    }
 }
