@@ -7,3 +7,6 @@ Tein toisen viikon deadlinen tehtävät, eli:
 * Tein luokille ensimmäiset testit, joissa lähinnä testataan konstruktoreita, gettereitä ja settereitä
 * Tein ensimmäisen pit-reportin
 * Tein määrittelyvaiheen luokkakaavion
+
+29.1.15 klo n. 2:20-3:20
+Luin miten hahmon animaatio ja esteeseen törmääminen kannattaa koodata.
