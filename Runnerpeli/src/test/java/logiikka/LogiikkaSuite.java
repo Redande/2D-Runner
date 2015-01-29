@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package runnerpeli.runnerpeli.logiikka;
+
+package logiikka;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,12 +8,8 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-/**
- *
- * @author Redande
- */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({runnerpeli.runnerpeli.logiikka.HahmoTest.class, runnerpeli.runnerpeli.logiikka.EsteTest.class, runnerpeli.runnerpeli.logiikka.SovelluslogiikkaTest.class, runnerpeli.runnerpeli.logiikka.TasoTest.class})
+@Suite.SuiteClasses({logiikka.HahmoTest.class, logiikka.EsteTest.class, logiikka.SovelluslogiikkaTest.class, logiikka.TasoTest.class})
 public class LogiikkaSuite {
 
     @BeforeClass
