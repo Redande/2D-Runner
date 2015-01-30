@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class SovelluslogiikkaTest {
     
-    Sovelluslogiikka sovelluslogiikka;
+    Sovelluslogiikka logiikka;
     
     public SovelluslogiikkaTest() {
     }
@@ -27,7 +27,7 @@ public class SovelluslogiikkaTest {
     
     @Before
     public void setUp() {
-        this.sovelluslogiikka = new Sovelluslogiikka();
+        this.logiikka = new Sovelluslogiikka();
     }
     
     @After
@@ -36,7 +36,19 @@ public class SovelluslogiikkaTest {
     
     @Test
     public void toimiikoKonstruktoriJaGetterit() {
-        Assert.assertNotNull(sovelluslogiikka.getHahmo());
-        Assert.assertNotNull(sovelluslogiikka.getTaso());
+        Assert.assertNotNull(logiikka.getHahmo());
+        Assert.assertNotNull(logiikka.getTaso());
+    }
+    
+    @Test
+    public void toimiikoKaynnista() {
+//        testaa metodia kaynnista sitten kun se on toteutettu
+    }
+    
+    @Test
+    public void toimiikoTormaako() {
+        logiikka.getTaso().lisaaEste(new Este(10, 50));
+        logiikka.tormaako();
+        assertEquals(false, logiikka.getHahmo().getOnkoElossa());
     }
 }

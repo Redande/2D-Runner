@@ -36,7 +36,7 @@
                 <configuration>
                     <instrumentation>
                         <includes>
-                            <include>runnerpeli.logiikka/*.class</include>
+                            <include>logiikka/*.class</include>
                         </includes>
                     </instrumentation>
                 </configuration>
@@ -48,10 +48,10 @@
                 <version>0.30</version>
                 <configuration>
                     <targetClasses>
-                        <param>runnerpeli.runnerpeli.logiikka.*</param>
+                        <param>logiikka.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>runnerpeli.runnerpeli.logiikka.*</param>
+                        <param>logiikka.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

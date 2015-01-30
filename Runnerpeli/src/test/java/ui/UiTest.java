@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 
 public class UiTest {
     
+    Ui ui;
+    
     public UiTest() {
     }
     
@@ -24,36 +26,11 @@ public class UiTest {
     
     @Before
     public void setUp() {
+        this.ui = new Ui();
     }
     
     @After
     public void tearDown() {
     }
-
-    /**
-     * Test of run method, of class Ui.
-     */
-//    @Test
-//    public void testRun() {
-//        System.out.println("run");
-//        Ui instance = new Ui();
-//        instance.run();
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of getFrame method, of class Ui.
-//     */
-//    @Test
-//    public void testGetFrame() {
-//        System.out.println("getFrame");
-//        Ui instance = new Ui();
-//        JFrame expResult = null;
-//        JFrame result = instance.getFrame();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
     
 }

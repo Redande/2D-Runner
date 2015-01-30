@@ -6,9 +6,9 @@ public class Este {
     private int x;
     private int y;
 
-    public Este() {
-        this.x = 0;
-        this.y = 0;
+    public Este(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public void setSijainti(int x, int y) {

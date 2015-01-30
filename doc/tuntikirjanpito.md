@@ -10,3 +10,8 @@ Tein toisen viikon deadlinen tehtävät, eli:
 
 29.1.15 klo n. 2:20-3:20
 Luin miten hahmon animaatio ja esteeseen törmääminen kannattaa koodata.
+
+29.1.15 klo n. 23:30-04:15
+* Aloittelin UI:ta ja jatkoin logiikan tekemistä 
+* Tein toisen pit-raportin ja ensimmäisen cobertura-raportin
+* Tein uuden luokkakaavion
