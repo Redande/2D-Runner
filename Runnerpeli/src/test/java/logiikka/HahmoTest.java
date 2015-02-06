@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 public class HahmoTest {
     
     Hahmo hahmo;
+    Sovelluslogiikka logiikka;
     
     public HahmoTest() {
     }
@@ -28,6 +29,7 @@ public class HahmoTest {
     @Before
     public void setUp() {
         this.hahmo = new Hahmo();
+        this.logiikka = new Sovelluslogiikka();
     }
     
     @After
@@ -36,8 +38,11 @@ public class HahmoTest {
     
     @Test
     public void toimiikoKonstruktori() {
-        assertEquals(10, hahmo.getNopeus());
-        Assert.assertArrayEquals(new int[]{10, 50}, hahmo.getSijainti());
+        assertEquals(1, hahmo.getNopeus());
+        Assert.assertArrayEquals(new int[]{10, 475}, hahmo.getSijainti());
+        assertEquals(true, hahmo.getOnkoElossa());
+        assertEquals(0, hahmo.getliikeY());
+        Assert.assertArrayEquals(new int[]{25, 25}, hahmo.getKoko());
     }
     
     @Test
@@ -79,13 +84,21 @@ public class HahmoTest {
     
     @Test
     public void toimiikoJuokseminen() {
-        hahmo.juoksee();
-        assertEquals(20, hahmo.getSijainti()[0]);
+        hahmo.juoksee(logiikka.getPainovoima());
+        assertEquals(11, hahmo.getSijainti()[0]);
     }
     
     @Test
     public void onkoSamallaKorkeudellaHyppaamisenJalkeen() {
-        hahmo.hyppaa();
-        assertEquals(50, hahmo.getSijainti()[1]);
+//        HYPPÄÄMISMETODIA PITÄÄ MUOKATA, VANHA TOTEUTUS POISTETTU
+//        hahmo.hyppaa();
+//        assertEquals(50, hahmo.getSijainti()[1]);
+    }
+    
+    @Test
+    public void toimiikoSetjaGetKoko() {
+        Assert.assertArrayEquals(new int[]{25, 25}, hahmo.getKoko());
+        hahmo.setKoko(50, 50);
+        Assert.assertArrayEquals(new int[]{50, 50}, hahmo.getKoko());
     }
 }

@@ -1,7 +1,7 @@
 
 package ui;
 
-import javax.swing.JFrame;
+import java.awt.Graphics;
 import logiikka.Sovelluslogiikka;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -10,12 +10,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class UiTest {
+public class IkkunaTest {
     
-    Ui ui;
-    Sovelluslogiikka logiikka;
+    private Sovelluslogiikka logiikka;
+    private Ikkuna ikkuna;
     
-    public UiTest() {
+    public IkkunaTest() {
     }
     
     @BeforeClass
@@ -29,7 +29,7 @@ public class UiTest {
     @Before
     public void setUp() {
         this.logiikka = new Sovelluslogiikka();
-        this.ui = new Ui(logiikka);
+        this.ikkuna = new Ikkuna(logiikka);
     }
     
     @After

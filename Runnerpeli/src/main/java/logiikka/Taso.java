@@ -3,15 +3,21 @@ package logiikka;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Luokka, joka sisältää kaikki tason esteet
+ * @author Redande
+ */
 public class Taso {
 
-    List<Este> esteet;
+    private List<Este> esteet;
 
     public Taso() {
         this.esteet = new ArrayList<Este>();
     }
-    
+/**
+ * Metodi esteen lisäämiseen tasoon
+ * @param este 
+ */
     public void lisaaEste(Este este) {
         esteet.add(este);
     }

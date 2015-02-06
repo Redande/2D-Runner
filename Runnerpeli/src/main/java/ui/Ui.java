@@ -1,37 +1,55 @@
 
 package ui;
 
-import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import logiikka.Sovelluslogiikka;
-
-public class Ui extends JPanel implements Runnable {
+/**
+ * Ohjelman graafisen puolen keskus
+ * @author Redande
+ */
+public class Ui implements Runnable {
     private JFrame frame;
-    private HahmonAnimaatio hahmo;
+    private Ikkuna ikkuna;
     private Sovelluslogiikka logiikka;
     
-    public Ui() {
-        super.setBackground(Color.GRAY);
-        this.logiikka = new Sovelluslogiikka();
-        this.hahmo = new HahmonAnimaatio(logiikka.getHahmo());
+    public Ui(Sovelluslogiikka logiikka) {
+        this.logiikka = logiikka;
     }
-    
+/**
+ * Ohjelman näkymä luodaan tässä metodissa
+ */  
     @Override
     public void run() {
         frame = new JFrame("2D-Runner");
         frame.setPreferredSize(new Dimension(900, 600));
-        
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
+        luoKomponentit(frame.getContentPane());
         
         frame.pack();
         frame.setVisible(true);
+    }
+/**
+ * Luodaan ikkuna, ja annetaan se ruudulle
+ * @param container 
+ */
+    public void luoKomponentit(Container container) {
+        this.ikkuna = new Ikkuna(logiikka);
+        container.add(ikkuna);
+    }
+/**
+ * Pelimoottoria varten luotu metodi, jossa päivitetään näkymää
+ */    
+    public void piirra() {
+        if (ikkuna == null) {
+            return;
+        }
         
-        
-        
-        logiikka.kaynnista();
+        ikkuna.repaint();
     }
     
     public JFrame getFrame() {

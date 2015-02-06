@@ -27,7 +27,7 @@ public class EsteTest {
     
     @Before
     public void setUp() {
-        este = new Este(0, 0);
+        este = new Este(10, 10, 10, 10);
     }
     
     @After
@@ -42,14 +42,22 @@ public class EsteTest {
     
     @Test
     public void toimiikoKonstruktori() {
-        Este toinenEste = new Este(2, 6);
+        Este toinenEste = new Este(2, 6, 10, 10);
         Assert.assertArrayEquals(new int[]{2, 6}, toinenEste.getSijainti());
+        Assert.assertArrayEquals(new int[]{10, 10}, toinenEste.getKoko());
     }
     
     @Test
     public void toimiikoSetSijainti() {
-        Este toinenEste = new Este(0, 0);
+        Este toinenEste = new Este(0, 0, 10, 10);
         toinenEste.setSijainti(5, 3);
         Assert.assertArrayEquals(new int[]{5,3}, toinenEste.getSijainti());
+    }
+    
+    @Test
+    public void toimiikoGetjaSetKoko() {
+        Assert.assertArrayEquals(new int[]{10, 10}, este.getKoko());
+        este.setKoko(20, 20);
+        Assert.assertArrayEquals(new int []{20, 20}, este.getKoko());
     }
 }

@@ -1,14 +1,27 @@
 
 package Main;
 
+import javax.swing.SwingUtilities;
+import logiikka.Pelimoottori;
+import logiikka.Sovelluslogiikka;
 import ui.Ui;
-
+/**
+ * Mainissa käynnistetään ohjelma
+ * @author Redande
+ */
 public class Main {
-    private static Ui ui;
-    
+/**
+ * Ohjelma siis käynnistetään main-metodissa
+ * @param args 
+ */
     public static void main(String[] args) {
-        ui = new Ui();
+        Sovelluslogiikka logiikka = new Sovelluslogiikka();
+        Ui ui = new Ui(logiikka);
         
-        ui.run();
+        SwingUtilities.invokeLater(ui);
+        
+        Pelimoottori moottori = new Pelimoottori(ui, logiikka);
+        
+        moottori.start();
     }
 }

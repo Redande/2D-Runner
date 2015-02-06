@@ -41,13 +41,20 @@ public class SovelluslogiikkaTest {
     }
     
     @Test
-    public void toimiikoKaynnista() {
-//        testaa metodia kaynnista sitten kun se on toteutettu
+    public void toimiikoGetjaSetPainovoima() {
+        assertEquals(1, logiikka.getPainovoima());
+        logiikka.setPainovoima(5);
+        assertEquals(5, logiikka.getPainovoima());
+    }
+    
+    @Test
+    public void toimiikoKaynnissa() {
+//        testaa metodia kaynnissa() sitten kun se on toteutettu
     }
     
     @Test
     public void toimiikoTormaako() {
-        logiikka.getTaso().lisaaEste(new Este(10, 50));
+        logiikka.getTaso().lisaaEste(new Este(10, 475, 25, 25));
         logiikka.tormaako();
         assertEquals(false, logiikka.getHahmo().getOnkoElossa());
     }
