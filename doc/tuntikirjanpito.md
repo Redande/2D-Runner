@@ -15,3 +15,9 @@ Luin miten hahmon animaatio ja esteeseen törmääminen kannattaa koodata.
 * Aloittelin UI:ta ja jatkoin logiikan tekemistä 
 * Tein toisen pit-raportin ja ensimmäisen cobertura-raportin
 * Tein uuden luokkakaavion
+
+6.2.15 klo 01:30-04:45
+4 viikon deadline:
+* Logiikkaa, ui:ta ja testejä kehitetty eteenpäin
+* Uusi pit-raportti
+* Javadocit luokille ja metodeille (ei testeille eikä get/set)
