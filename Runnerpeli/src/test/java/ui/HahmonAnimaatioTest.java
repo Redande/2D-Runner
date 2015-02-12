@@ -45,8 +45,11 @@ public class HahmonAnimaatioTest {
     }
     
     @Test
-    public void toimiikoHyppaa() {
-//        Tee testi sitten kun hahmon hyppaa() toteutettu
+    public void toimiikoPaivitaSijainti() {
+        Assert.assertArrayEquals(hahmo.getSijainti(), hahmonAnimaatio.getSijainti());
+        hahmo.setSijainti(20, 475);
+        hahmonAnimaatio.paivitaSijainti();
+        Assert.assertArrayEquals(hahmo.getSijainti(), hahmonAnimaatio.getSijainti());
     }
 
 }

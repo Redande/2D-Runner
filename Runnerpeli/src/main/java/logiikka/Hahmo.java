@@ -15,7 +15,7 @@ public class Hahmo {
     private int korkeus;
 
     public Hahmo() {
-        this.nopeus = 1;
+        this.nopeus = 3;
         this.x = 10;
         this.y = 475;
         this.onkoElossa = true;
@@ -34,6 +34,10 @@ public class Hahmo {
 
     public int getNopeus() {
         return nopeus;
+    }
+    
+    public void setliikeY(int liikey) {
+        this.liikeY = liikey;
     }
     
     public int getliikeY() {
@@ -85,7 +89,7 @@ public class Hahmo {
         }
     }
 /**
- * Metodissa tullaan totetuttamaan hahmon hyppääminen
+ * Metodissa toteutetaan hahmon hyppääminen
  */
     public void hyppaa() {
         if (liikeY == -8 && y == 475) {

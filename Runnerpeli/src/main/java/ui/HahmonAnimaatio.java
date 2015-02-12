@@ -35,9 +35,12 @@ public class HahmonAnimaatio {
     public boolean getIsVisible() {
         return isVisible;
     }
-    
+    /**
+     * Ikkunaa varten, jotta ikkuna piirtäisi hahmon aina oikeaan kohtaan ruudulla
+     */
     public void paivitaSijainti() {
         this.x = hahmo.getSijainti()[0];
         this.y = hahmo.getSijainti()[1];
+        this.isVisible = hahmo.getOnkoElossa();
     }
 }

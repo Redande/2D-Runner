@@ -38,7 +38,7 @@ public class HahmoTest {
     
     @Test
     public void toimiikoKonstruktori() {
-        assertEquals(1, hahmo.getNopeus());
+        assertEquals(3, hahmo.getNopeus());
         Assert.assertArrayEquals(new int[]{10, 475}, hahmo.getSijainti());
         assertEquals(true, hahmo.getOnkoElossa());
         assertEquals(0, hahmo.getliikeY());
@@ -85,14 +85,7 @@ public class HahmoTest {
     @Test
     public void toimiikoJuokseminen() {
         hahmo.juoksee(logiikka.getPainovoima());
-        assertEquals(11, hahmo.getSijainti()[0]);
-    }
-    
-    @Test
-    public void onkoSamallaKorkeudellaHyppaamisenJalkeen() {
-//        HYPPÄÄMISMETODIA PITÄÄ MUOKATA, VANHA TOTEUTUS POISTETTU
-//        hahmo.hyppaa();
-//        assertEquals(50, hahmo.getSijainti()[1]);
+        assertEquals(13, hahmo.getSijainti()[0]);
     }
     
     @Test
@@ -100,5 +93,27 @@ public class HahmoTest {
         Assert.assertArrayEquals(new int[]{25, 25}, hahmo.getKoko());
         hahmo.setKoko(50, 50);
         Assert.assertArrayEquals(new int[]{50, 50}, hahmo.getKoko());
+    }
+    
+    @Test
+    public void toimiikoGetjaSetLiikeY() {
+        assertEquals(0, hahmo.getliikeY());
+        hahmo.setliikeY(5);
+        assertEquals(5, hahmo.getliikeY());
+    }
+    
+    @Test
+    public void toimiikoJuoksee() {
+        hahmo.juoksee(logiikka.getPainovoima());
+        assertEquals(13, hahmo.getSijainti()[0]);
+        assertEquals(475, hahmo.getSijainti()[1]);
+    }
+    
+    @Test
+    public void toimiikoHyppaa() {
+        hahmo.setliikeY(-8);
+        assertEquals(-8, hahmo.getliikeY());
+        hahmo.hyppaa();
+        assertEquals(16, hahmo.getliikeY());
     }
 }

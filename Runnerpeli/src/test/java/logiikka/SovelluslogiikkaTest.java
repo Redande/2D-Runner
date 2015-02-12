@@ -49,7 +49,8 @@ public class SovelluslogiikkaTest {
     
     @Test
     public void toimiikoKaynnissa() {
-//        testaa metodia kaynnissa() sitten kun se on toteutettu
+        logiikka.getTaso().lisaaEste(new Este(10, 475, 25, 25));
+        logiikka.kaynnissa();
     }
     
     @Test

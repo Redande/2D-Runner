@@ -32,7 +32,7 @@ public class Sovelluslogiikka {
         return painovoima;
     }
 /**
- * Metodissa pyöritetään logiikkaa niin kauan, kun hahmo on hengissä
+ * Metodissa tarkastetaan törmääkö hahmo esteeseen. Jos ei, hahmo liikkuu eteenpäin
  */
     public void kaynnissa() {
             tormaako();
@@ -51,10 +51,24 @@ public class Sovelluslogiikka {
  * Tarkistetaan, törmääkö hahmo esteeseen
  */
     public void tormaako() {
+        int hahmonX = hahmo.getSijainti()[0];
+        int hahmonY = hahmo.getSijainti()[1];
+        int hahmonLeveys = hahmo.getKoko()[0];
+        int hahmonKorkeus = hahmo.getKoko()[1];
         for (Este este : taso.getTasonEsteet()) {
-            if (este.getSijainti()[0] - (este.getKoko()[0] / 2) == hahmo.getSijainti()[0] + (hahmo.getKoko()[0] / 2)) {
+            int esteenX = este.getSijainti()[0];
+            int esteenY = este.getSijainti()[1];
+            int esteenLeveys = este.getKoko()[0];
+            int esteenKorkeus = este.getKoko()[1];
+            
+            if (hahmonX + (hahmonLeveys/2) < esteenX - (esteenLeveys/2)) {
+            } else if (hahmonX - (hahmonLeveys/2) > esteenX + (esteenLeveys/2)) {               
+            } else if (hahmonY + (hahmonKorkeus/2) < esteenY - (esteenKorkeus/2)) { 
+            } else {
                 hahmo.setOnkoElossa(false);
             }
+            
+           
         }
     }
 

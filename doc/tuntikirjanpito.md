@@ -21,3 +21,8 @@ Luin miten hahmon animaatio ja esteeseen törmääminen kannattaa koodata.
 * Logiikkaa, ui:ta ja testejä kehitetty eteenpäin
 * Uusi pit-raportti
 * Javadocit luokille ja metodeille (ei testeille eikä get/set)
+
+12.2.15  
+klo 14-15 hyppääminen ja muita luokkia&metodeita päivitetty  
+klo 20-21 testejä päivitetty
+klo 22-23:30 uusi luokkakaavio, käynnistämisen ja ohjelman pyörimisen sekvenssikaavio, ja törmäämisen sekvenssikaavio
