@@ -23,16 +23,6 @@ public class HahmonAnimaatio {
         this.korkeus = hahmo.getKoko()[1];
         this.isVisible = hahmo.getOnkoElossa();
     }
-/**
- * Hahmon hyppäämisen graafinen puoli
- * @param e 
- */
-    public void hyppaa(KeyEvent e) {
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_SPACE) {
-            hahmo.hyppaa();
-        }
-    }
     
     public int[] getSijainti() {
         return new int[]{x, y};
@@ -44,5 +34,10 @@ public class HahmonAnimaatio {
     
     public boolean getIsVisible() {
         return isVisible;
+    }
+    
+    public void paivitaSijainti() {
+        this.x = hahmo.getSijainti()[0];
+        this.y = hahmo.getSijainti()[1];
     }
 }

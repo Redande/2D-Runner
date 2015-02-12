@@ -35,8 +35,11 @@ public class Sovelluslogiikka {
  * Metodissa pyöritetään logiikkaa niin kauan, kun hahmo on hengissä
  */
     public void kaynnissa() {
-//        hahmo.juoksee(painovoima);
-
+            tormaako();
+            if (!hahmo.getOnkoElossa()) {
+                hahmo.setNopeus(0);
+            }
+            hahmo.juoksee(painovoima);
     }
 /**
  * Metodissa luodaan esteet tasoon.
@@ -49,7 +52,7 @@ public class Sovelluslogiikka {
  */
     public void tormaako() {
         for (Este este : taso.getTasonEsteet()) {
-            if (este.getSijainti()[0] == hahmo.getSijainti()[0] && este.getSijainti()[1] == hahmo.getSijainti()[1]) {
+            if (este.getSijainti()[0] - (este.getKoko()[0] / 2) == hahmo.getSijainti()[0] + (hahmo.getKoko()[0] / 2)) {
                 hahmo.setOnkoElossa(false);
             }
         }

@@ -72,18 +72,25 @@ public class Hahmo {
  */
     public void juoksee(int painovoima) {
         x += nopeus;
+ 
         y -= liikeY;
-        if (liikeY - painovoima >= -8) {
-            liikeY -= painovoima;
-        } else {
+        
+        liikeY -= painovoima;
+        if (liikeY < -8) {
             liikeY = -8;
+        }
+        
+        if (y >= 475) {
+            y = 475;
         }
     }
 /**
  * Metodissa tullaan totetuttamaan hahmon hyppääminen
  */
     public void hyppaa() {
-        
+        if (liikeY == -8 && y == 475) {
+            liikeY = 16;
+        }
     }
 
 }

@@ -30,6 +30,9 @@ public class Ui implements Runnable {
         
         luoKomponentit(frame.getContentPane());
         
+        NappaimistonKuuntelija kuuntelija = new NappaimistonKuuntelija(logiikka.getHahmo());
+        frame.addKeyListener(kuuntelija);
+        
         frame.pack();
         frame.setVisible(true);
     }
@@ -48,7 +51,6 @@ public class Ui implements Runnable {
         if (ikkuna == null) {
             return;
         }
-        
         ikkuna.repaint();
     }
     

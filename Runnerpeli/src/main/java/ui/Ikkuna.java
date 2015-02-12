@@ -37,6 +37,8 @@ public class Ikkuna extends JPanel{
             g.fillRect(este.getSijainti()[0], este.getSijainti()[1], este.getKoko()[0], este.getKoko()[1]);
         }
         
+        hahmo.paivitaSijainti();
+        
         g.setColor(Color.red);
         g.fillOval(hahmo.getSijainti()[0], hahmo.getSijainti()[1], hahmo.getKoko()[0], hahmo.getKoko()[1]);
         

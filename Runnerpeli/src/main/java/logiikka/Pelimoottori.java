@@ -22,10 +22,28 @@ public class Pelimoottori extends Thread {
     @Override
     public void run() {
         while (kaynnissa) {
-            logiikka.kaynnissa();
-            ui.piirra();
+            paivita();
+            piirra();
             odota();
         }
+    }
+    /**
+     * Metodi sovelluslogiikan päivittämiselle
+     */
+    public void paivita() {
+        logiikka.kaynnissa();
+    }
+    /**
+     * Metodi käyttöliittymän päivittämiselle
+     */
+    public void piirra() {
+        ui.piirra();
+    }
+    /**
+     * Metodi pelimoottorin sammuttamiselle
+     */
+    public void sammuta() {
+        kaynnissa = false;
     }
 /**
  * Apumetodi run-metodille.
