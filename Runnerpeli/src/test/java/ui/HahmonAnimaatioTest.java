@@ -38,7 +38,7 @@ public class HahmonAnimaatioTest {
     }
     
     @Test
-    public void toimiikoKonstruktori() {
+    public void toimiikoKonstruktorijaGetterit() {
         Assert.assertArrayEquals(hahmo.getSijainti(), hahmonAnimaatio.getSijainti());
         Assert.assertArrayEquals(hahmo.getKoko(), hahmonAnimaatio.getKoko());
         assertEquals(hahmo.getOnkoElossa(), hahmonAnimaatio.getIsVisible());

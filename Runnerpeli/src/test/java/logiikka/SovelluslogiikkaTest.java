@@ -38,6 +38,8 @@ public class SovelluslogiikkaTest {
     public void toimiikoKonstruktoriJaGetterit() {
         Assert.assertNotNull(logiikka.getHahmo());
         Assert.assertNotNull(logiikka.getTaso());
+        assertEquals(1, logiikka.getPainovoima());
+        assertEquals(false, logiikka.getPeliloppui());
     }
     
     @Test
@@ -49,14 +51,19 @@ public class SovelluslogiikkaTest {
     
     @Test
     public void toimiikoKaynnissa() {
-        logiikka.getTaso().lisaaEste(new Este(10, 475, 25, 25));
+        assertEquals("", logiikka.kaynnissa());
+        
+        logiikka.getTaso().lisaaEste(new Este(100, 475, 25, 25, 5));
         logiikka.kaynnissa();
+        assertEquals(false, logiikka.getHahmo().getOnkoElossa());
+        assertEquals("GG GET REKT", logiikka.kaynnissa());
     }
     
     @Test
     public void toimiikoTormaako() {
-        logiikka.getTaso().lisaaEste(new Este(10, 475, 25, 25));
+        logiikka.getTaso().lisaaEste(new Este(100, 475, 25, 25, 5));
         logiikka.tormaako();
         assertEquals(false, logiikka.getHahmo().getOnkoElossa());
+        assertEquals(true, logiikka.tormaako());
     }
 }

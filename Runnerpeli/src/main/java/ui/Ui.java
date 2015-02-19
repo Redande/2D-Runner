@@ -32,13 +32,16 @@ public class Ui implements Runnable {
     }
 
     /**
-     * Ohjelman näkymä luodaan tässä metodissa
+     * Ohjelman näkymä luodaan tässä metodissa.
      */
     @Override
     public void run() {
         luoMenu();
     }
 
+    /**
+     * Metodissa luodaan menu.
+     */
     public void luoMenu() {
         frame = new JFrame("2D-Runner");
         frame.setPreferredSize(new Dimension(150, 300));
@@ -52,6 +55,10 @@ public class Ui implements Runnable {
         frame.setVisible(true);
     }
 
+    /**
+     * Luodaan menun komponentit.
+     * @param container 
+     */
     public void luoMenunKomponentit(Container container) {
         BorderLayout frameLayout = new BorderLayout();
         container.setLayout(frameLayout);
@@ -79,6 +86,9 @@ public class Ui implements Runnable {
         container.add(menuPanel, BorderLayout.CENTER);
     }
     
+    /**
+     * Luodaan tasovalikko menua varten.
+     */
     public void luoTasovalikko() {
         frame = new JFrame("2D-Runner");
         frame.setPreferredSize(new Dimension(150, 300));
@@ -92,6 +102,10 @@ public class Ui implements Runnable {
         frame.setVisible(true);
     }
     
+    /**
+     * Luodaan tasovalikon komponentit.
+     * @param container 
+     */
     public void luoTasovalikonKomponentit(Container container) {
         BorderLayout frameLayout = new BorderLayout();
         container.setLayout(frameLayout);
@@ -123,6 +137,9 @@ public class Ui implements Runnable {
         container.add(menuPanel, BorderLayout.CENTER);
     }
     
+    /**
+     * Pelin ensimmäinen taso käynnistetään täällä
+     */
     public void kaynnistaEnsimmainenTaso() {
         moottori.start();
         
@@ -142,7 +159,7 @@ public class Ui implements Runnable {
     }
 
     /**
-     * Luodaan ikkuna, ja annetaan se ruudulle
+     * Luodaan ikkuna, ja annetaan se pelille
      *
      * @param container
      */
@@ -151,6 +168,9 @@ public class Ui implements Runnable {
         container.add(ikkuna);
     }
     
+    /**
+     * Luodaan pelinjälkeinen menu
+     */
     public void pelinjalkeinenMenu() {
         frame = new JFrame("2D-Runner");
         frame.setPreferredSize(new Dimension(150, 300));
@@ -164,6 +184,10 @@ public class Ui implements Runnable {
         frame.setVisible(true);
     }
     
+    /**
+     * Pelinjälkeisen menun komponentit
+     * @param container 
+     */
     public void luoPelinjalkeisenMenunKomponentit(Container container) {
         BorderLayout frameLayout = new BorderLayout();
         container.setLayout(frameLayout);
@@ -173,7 +197,7 @@ public class Ui implements Runnable {
         menuPanel.setLayout(menuPanelLayout);
         menuPanel.add(Box.createRigidArea(new Dimension(25, 25)));
         
-        JLabel menuLabel = new JLabel("Peli päättyi");
+        JLabel menuLabel = new JLabel(moottori.getViesti());
         menuLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         menuPanel.add(menuLabel);
         menuPanel.add(Box.createRigidArea(new Dimension(25, 25)));
@@ -204,7 +228,7 @@ public class Ui implements Runnable {
             return;
         }
         ikkuna.repaint();
-        if (!logiikka.getHahmo().getOnkoElossa()) {
+        if (logiikka.getPeliloppui()) {
             moottori.sammuta();
             pelinjalkeinenMenu();
             return;
@@ -217,5 +241,9 @@ public class Ui implements Runnable {
     
     public Sovelluslogiikka getLogiikka() {
         return logiikka;
+    }
+    
+    public Pelimoottori getMoottori() {
+        return moottori;
     }
 }

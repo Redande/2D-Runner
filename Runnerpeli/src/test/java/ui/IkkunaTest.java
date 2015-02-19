@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import logiikka.Sovelluslogiikka;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,6 +35,12 @@ public class IkkunaTest {
     
     @After
     public void tearDown() {
+    }
+    
+    @Test
+    public void toimiikoKonstruktori() {
+        Assert.assertNotNull(this.logiikka);
+        Assert.assertNotNull(this.ikkuna.getHahmo());
     }
     
 }

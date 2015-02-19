@@ -1,4 +1,5 @@
 package logiikka;
+
 /**
  * Ohjelman logiikan keskus, jossa muut logiikkaluokat luodaan.
  * @author Redande
@@ -9,6 +10,7 @@ public class Sovelluslogiikka {
     private Hahmo hahmo;
     private int painovoima;
     private Maali maali;
+    private boolean peliloppui;
 
     public Sovelluslogiikka() {
         this.taso = new Taso();
@@ -17,6 +19,7 @@ public class Sovelluslogiikka {
         lisaaMaali();
         this.painovoima = 1;
         this.maali = taso.getMaali();
+        this.peliloppui = false;
     }
 
     public Taso getTaso() {
@@ -34,45 +37,54 @@ public class Sovelluslogiikka {
     public int getPainovoima() {
         return painovoima;
     }
-/**
- * Metodissa tarkastetaan törmääkö hahmo esteeseen. Jos ei, hahmo liikkuu eteenpäin
- */
-    public void kaynnissa() {
-            tormaako();
-            if (!hahmo.getOnkoElossa()) {
-                return;
+    
+    /**
+    * Metodissa tarkastetaan törmääkö hahmo esteeseen. Jos ei, hahmo liikkuu eteenpäin. Jos törmää, palautetaan tilanteeseen sopiva loppuviesti.
+     * @return 
+    */
+    public String kaynnissa() {
+            boolean tormasiko = tormaako();
+            if (tormasiko && hahmo.getOnkoElossa()) {
+                return "GG WP";
+            } else if (tormasiko) {
+                return "GG GET REKT";
             }
             hahmo.liikkuuko(painovoima);
             for (Este este : taso.getTasonEsteet()) {
                 este.liiku();
             }
             maali.liiku();
+            return "";
     }
-/**
- * Metodissa luodaan esteet tasoon.
- */
+    
+    /**
+    * Metodissa luodaan esteet tasoon.
+    */
     public void lisaaEsteet() {
-        taso.lisaaEste(new Este(700, 475, 25, 25));
-        taso.lisaaEste(new Este(900, 475, 25, 25));
-        taso.lisaaEste(new Este(1100, 475, 25, 25));
-        taso.lisaaEste(new Este(1300, 475, 25, 25));
-        taso.lisaaEste(new Este(1500, 475, 25, 25));
-        taso.lisaaEste(new Este(1700, 475, 25, 25));
-        taso.lisaaEste(new Este(1900, 475, 25, 25));
-        taso.lisaaEste(new Este(2100, 475, 25, 25));
-        taso.lisaaEste(new Este(2300, 475, 25, 25));
-        taso.lisaaEste(new Este(2500, 475, 25, 25));
+        taso.lisaaEste(new Este(700, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(900, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(1100, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(1300, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(1500, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(1700, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(1900, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(2100, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(2300, 475, 25, 25, 5));
+        taso.lisaaEste(new Este(2500, 475, 25, 25, 5));
     }
+    
     /**
      * Lisätään maali.
      */
     public void lisaaMaali() {
-        taso.lisaaMaali(new Maali(2700, 400, 10, 100));
+        taso.lisaaMaali(new Maali(2700, 400, 10, 100, 5));
     }
-/**
- * Tarkistetaan, törmääkö hahmo esteeseen
- */
-    public void tormaako() {
+    
+    /**
+    * Tarkistetaan, törmääkö hahmo esteeseen
+     * @return 
+    */
+    public boolean tormaako() {
         int hahmonX = hahmo.getSijainti()[0];
         int hahmonY = hahmo.getSijainti()[1];
         int hahmonLeveys = hahmo.getKoko()[0];
@@ -88,6 +100,7 @@ public class Sovelluslogiikka {
             } else if (hahmonY + (hahmonKorkeus/2) < esteenY - (esteenKorkeus/2)) { 
             } else {
                 hahmo.setOnkoElossa(false);
+                peliloppui = true;
             }
             
            
@@ -100,8 +113,14 @@ public class Sovelluslogiikka {
             } else if (hahmonX - (hahmonLeveys/2) > maalinX + (maalinLeveys/2)) {               
             } else if (hahmonY + (hahmonKorkeus/2) < maalinY - (maalinKorkeus/2)) { 
             } else {
-                hahmo.setOnkoElossa(false);
+//                hahmo.setOnkoElossa(false);
+                peliloppui = true;
         }
+        return peliloppui;
+    }
+    
+    public boolean getPeliloppui() {
+        return peliloppui;
     }
 
 }

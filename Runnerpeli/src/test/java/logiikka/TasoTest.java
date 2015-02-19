@@ -34,7 +34,15 @@ public class TasoTest {
     }
     
     @Test
-    public void toimiikoKonsruktoriJaGetteri() {
+    public void toimiikoKonsruktoriJaGetteriEsteille() {
         Assert.assertNotNull(taso.getTasonEsteet());
+    }
+    
+    @Test
+    public void toimiikoGetjaLisaaMaali() {
+        taso.lisaaMaali(new Maali(10, 10, 10, 10, 5));
+        Assert.assertArrayEquals(new int[]{10, 10}, taso.getMaali().getSijainti());
+        Assert.assertArrayEquals(new int[]{10, 10}, taso.getMaali().getKoko());
+        assertEquals(5, taso.getMaali().getNopeus());
     }
 }

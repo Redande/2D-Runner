@@ -2,7 +2,7 @@
 package ui;
 
 import logiikka.Hahmo;
-import java.awt.event.KeyEvent;
+
 /**
  * Hahmon käyttöliittymäpuolta hoitava luokka
  * @author Redande
@@ -35,6 +35,7 @@ public class HahmonAnimaatio {
     public boolean getIsVisible() {
         return isVisible;
     }
+    
     /**
      * Ikkunaa varten, jotta ikkuna piirtäisi hahmon aina oikeaan kohtaan ruudulla
      */

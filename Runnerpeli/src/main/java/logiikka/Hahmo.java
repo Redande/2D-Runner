@@ -1,4 +1,5 @@
 package logiikka;
+
 /**
  * Luokassa toteutetaan hahmon logiikkapuoli.
  * 
@@ -55,10 +56,11 @@ public class Hahmo {
     public int[] getKoko() {
         return new int[]{leveys, korkeus};
     }
-/**
- * Metodissa hoidetaan painovoiman vaikutus hahmoon, ja hyppäämisen alastulo
- * @param painovoima 
- */
+    
+    /**
+    * Metodissa hoidetaan painovoiman vaikutus hahmoon, ja hyppäämisen alastulo
+    * @param painovoima 
+    */
     public void liikkuuko(int painovoima) { 
         y -= liikeY;
         
@@ -71,9 +73,10 @@ public class Hahmo {
             y = 475;
         }
     }
-/**
- * Metodissa toteutetaan hahmon hyppääminen
- */
+    
+    /**
+    * Metodissa toteutetaan hahmon hyppääminen
+    */
     public void hyppaa() {
         if (liikeY == -8 && y == 475) {
             liikeY = 16;

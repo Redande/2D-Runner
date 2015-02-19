@@ -57,4 +57,8 @@ public class Ikkuna extends JPanel {
 
         getToolkit().sync();
     }
+    
+    public HahmonAnimaatio getHahmo() {
+        return hahmo;
+    }
 }

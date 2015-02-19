@@ -38,23 +38,10 @@ public class HahmoTest {
     
     @Test
     public void toimiikoKonstruktori() {
-        assertEquals(3, hahmo.getNopeus());
-        Assert.assertArrayEquals(new int[]{10, 475}, hahmo.getSijainti());
+        Assert.assertArrayEquals(new int[]{100, 475}, hahmo.getSijainti());
         assertEquals(true, hahmo.getOnkoElossa());
         assertEquals(0, hahmo.getliikeY());
         Assert.assertArrayEquals(new int[]{25, 25}, hahmo.getKoko());
-    }
-    
-    @Test
-    public void toimiikoSetNopeus() {
-        hahmo.setNopeus(15);
-        assertEquals(15, hahmo.getNopeus());
-    }
-    
-    @Test
-    public void toimiikoGetNopeus() {
-        hahmo.setNopeus(2);
-        assertEquals(2, hahmo.getNopeus());
     }
     
     @Test
@@ -70,13 +57,7 @@ public class HahmoTest {
     }
     
     @Test
-    public void eiNegatiivistaNopeutta() {
-        hahmo.setNopeus(-5);
-        assertEquals(0, hahmo.getNopeus());
-    }
-    
-    @Test
-    public void onkoElossaToimii() {
+    public void toimiikoSetjaGetOnkoElossa() {
         assertEquals(true, hahmo.getOnkoElossa());
         hahmo.setOnkoElossa(false);
         assertEquals(false, hahmo.getOnkoElossa());
@@ -85,7 +66,7 @@ public class HahmoTest {
     @Test
     public void toimiikoJuokseminen() {
         hahmo.liikkuuko(logiikka.getPainovoima());
-        Assert.assertArrayEquals(new int[]{10, 475}, hahmo.getSijainti());
+        Assert.assertArrayEquals(new int[]{100, 475}, hahmo.getSijainti());
     }
     
     @Test
@@ -103,9 +84,9 @@ public class HahmoTest {
     }
     
     @Test
-    public void toimiikoJuoksee() {
+    public void toimiikoLiikkuuko() {
         hahmo.liikkuuko(logiikka.getPainovoima());
-        assertEquals(10, hahmo.getSijainti()[0]);
+        assertEquals(100, hahmo.getSijainti()[0]);
         assertEquals(475, hahmo.getSijainti()[1]);
     }
     
