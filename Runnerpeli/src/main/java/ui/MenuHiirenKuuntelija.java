@@ -22,9 +22,8 @@ class MenuHiirenKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == kaynnistaPeli) {
             ui.getFrame().setVisible(false);
-            ui.kaynnistaPeli();            
-        }
-        if (ae.getSource() == suljeOhjelma) {
+            ui.luoTasovalikko();
+        } else if (ae.getSource() == suljeOhjelma) {
             System.exit(0);
         }
     }
