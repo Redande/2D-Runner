@@ -31,4 +31,4 @@ klo 22-23:30 uusi luokkakaavio, käynnistämisen ja ohjelman pyörimisen sekvens
 klo 16-23 Ohjelman kehittäminen demovaiheeseen asti					
 
 20.2.15					
-klo 00-XX Uusi luokkakaavio, uusia sekvenssikaavioita
+klo 00-01 Uusi luokkakaavio, uusia sekvenssikaavioita
