@@ -10,6 +10,7 @@ import java.util.List;
 public class Taso {
 
     private List<Este> esteet;
+    private Maali maali;
 
     public Taso() {
         this.esteet = new ArrayList<Este>();
@@ -24,5 +25,13 @@ public class Taso {
     
     public List<Este> getTasonEsteet() {
         return esteet;
+    }
+    
+    public void lisaaMaali(Maali maali) {
+        this.maali = maali;
+    }
+    
+    public Maali getMaali() {
+        return maali;
     }
 }

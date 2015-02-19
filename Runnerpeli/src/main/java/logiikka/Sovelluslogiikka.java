@@ -8,12 +8,15 @@ public class Sovelluslogiikka {
     private Taso taso;
     private Hahmo hahmo;
     private int painovoima;
+    private Maali maali;
 
     public Sovelluslogiikka() {
         this.taso = new Taso();
         this.hahmo = new Hahmo();
         lisaaEsteet();
+        lisaaMaali();
         this.painovoima = 1;
+        this.maali = taso.getMaali();
     }
 
     public Taso getTaso() {
@@ -37,15 +40,34 @@ public class Sovelluslogiikka {
     public void kaynnissa() {
             tormaako();
             if (!hahmo.getOnkoElossa()) {
-                hahmo.setNopeus(0);
+                return;
             }
-            hahmo.juoksee(painovoima);
+            hahmo.liikkuuko(painovoima);
+            for (Este este : taso.getTasonEsteet()) {
+                este.liiku();
+            }
+            maali.liiku();
     }
 /**
  * Metodissa luodaan esteet tasoon.
  */
     public void lisaaEsteet() {
         taso.lisaaEste(new Este(700, 475, 25, 25));
+        taso.lisaaEste(new Este(900, 475, 25, 25));
+        taso.lisaaEste(new Este(1100, 475, 25, 25));
+        taso.lisaaEste(new Este(1300, 475, 25, 25));
+        taso.lisaaEste(new Este(1500, 475, 25, 25));
+        taso.lisaaEste(new Este(1700, 475, 25, 25));
+        taso.lisaaEste(new Este(1900, 475, 25, 25));
+        taso.lisaaEste(new Este(2100, 475, 25, 25));
+        taso.lisaaEste(new Este(2300, 475, 25, 25));
+        taso.lisaaEste(new Este(2500, 475, 25, 25));
+    }
+    /**
+     * Lisätään maali.
+     */
+    public void lisaaMaali() {
+        taso.lisaaMaali(new Maali(2700, 400, 10, 100));
     }
 /**
  * Tarkistetaan, törmääkö hahmo esteeseen
@@ -69,6 +91,16 @@ public class Sovelluslogiikka {
             }
             
            
+        }
+        int maalinX = maali.getSijainti()[0];
+        int maalinY = maali.getSijainti()[1];
+        int maalinLeveys = maali.getKoko()[0];
+        int maalinKorkeus = maali.getKoko()[1];
+        if (hahmonX + (hahmonLeveys/2) < maalinX - (maalinLeveys/2)) {
+            } else if (hahmonX - (hahmonLeveys/2) > maalinX + (maalinLeveys/2)) {               
+            } else if (hahmonY + (hahmonKorkeus/2) < maalinY - (maalinKorkeus/2)) { 
+            } else {
+                hahmo.setOnkoElossa(false);
         }
     }
 

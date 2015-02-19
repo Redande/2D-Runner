@@ -20,8 +20,8 @@ public class Main {
         
         SwingUtilities.invokeLater(ui);
         
-        Pelimoottori moottori = new Pelimoottori(ui, logiikka);
+//        Pelimoottori moottori = new Pelimoottori(ui, logiikka);
         
-        moottori.start();
+//        moottori.start();
     }
 }

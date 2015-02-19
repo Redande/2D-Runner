@@ -6,7 +6,6 @@ package logiikka;
  */
 public class Hahmo {
 
-    private int nopeus;
     private int x;
     private int y;
     private boolean onkoElossa;
@@ -15,25 +14,12 @@ public class Hahmo {
     private int korkeus;
 
     public Hahmo() {
-        this.nopeus = 3;
-        this.x = 10;
+        this.x = 100;
         this.y = 475;
         this.onkoElossa = true;
         this.liikeY = 0;
         this.leveys = 25;
         this.korkeus = 25;
-    }
-
-    public void setNopeus(int nopeus) {
-        if (nopeus < 0) {
-            this.nopeus = 0;
-        } else {
-            this.nopeus = nopeus;
-        }
-    }
-
-    public int getNopeus() {
-        return nopeus;
     }
     
     public void setliikeY(int liikey) {
@@ -70,13 +56,10 @@ public class Hahmo {
         return new int[]{leveys, korkeus};
     }
 /**
- * Hahmon juoksemisen logiikka toteutetaan tässä metodissa.
- * Hahmo liikkuu eteenpäin annetulla nopeudella, ja painovoima vetää hahmoa alaspäin.
+ * Metodissa hoidetaan painovoiman vaikutus hahmoon, ja hyppäämisen alastulo
  * @param painovoima 
  */
-    public void juoksee(int painovoima) {
-        x += nopeus;
- 
+    public void liikkuuko(int painovoima) { 
         y -= liikeY;
         
         liikeY -= painovoima;

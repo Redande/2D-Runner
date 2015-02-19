@@ -84,8 +84,8 @@ public class HahmoTest {
     
     @Test
     public void toimiikoJuokseminen() {
-        hahmo.juoksee(logiikka.getPainovoima());
-        assertEquals(13, hahmo.getSijainti()[0]);
+        hahmo.liikkuuko(logiikka.getPainovoima());
+        Assert.assertArrayEquals(new int[]{10, 475}, hahmo.getSijainti());
     }
     
     @Test
@@ -104,8 +104,8 @@ public class HahmoTest {
     
     @Test
     public void toimiikoJuoksee() {
-        hahmo.juoksee(logiikka.getPainovoima());
-        assertEquals(13, hahmo.getSijainti()[0]);
+        hahmo.liikkuuko(logiikka.getPainovoima());
+        assertEquals(10, hahmo.getSijainti()[0]);
         assertEquals(475, hahmo.getSijainti()[1]);
     }
     
