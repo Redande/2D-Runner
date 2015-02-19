@@ -173,7 +173,7 @@ public class Ui implements Runnable {
         menuPanel.setLayout(menuPanelLayout);
         menuPanel.add(Box.createRigidArea(new Dimension(25, 25)));
         
-        JLabel menuLabel = new JLabel("Menu");
+        JLabel menuLabel = new JLabel("Peli päättyi");
         menuLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         menuPanel.add(menuLabel);
         menuPanel.add(Box.createRigidArea(new Dimension(25, 25)));
@@ -213,5 +213,9 @@ public class Ui implements Runnable {
 
     public JFrame getFrame() {
         return frame;
+    }
+    
+    public Sovelluslogiikka getLogiikka() {
+        return logiikka;
     }
 }

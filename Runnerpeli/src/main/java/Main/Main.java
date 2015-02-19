@@ -11,7 +11,7 @@ import ui.Ui;
  */
 public class Main {
 /**
- * Ohjelma siis käynnistetään main-metodissa
+ * Ohjelma käynnistetään main-metodissa
  * @param args 
  */
     public static void main(String[] args) {
