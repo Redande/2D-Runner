@@ -26,3 +26,9 @@ Luin miten hahmon animaatio ja esteeseen törmääminen kannattaa koodata.
 klo 14-15 hyppääminen ja muita luokkia&metodeita päivitetty  
 klo 20-21 testejä päivitetty
 klo 22-23:30 uusi luokkakaavio, käynnistämisen ja ohjelman pyörimisen sekvenssikaavio, ja törmäämisen sekvenssikaavio
+
+19.2.15					
+klo 16-23 Ohjelman kehittäminen demovaiheeseen asti					
+
+20.2.15					
+klo 00-XX Uusi luokkakaavio, uusia sekvenssikaavioita

@@ -6,21 +6,21 @@ import javax.swing.JButton;
 
 class MenuHiirenKuuntelija implements ActionListener {
 
-    private JButton kaynnistaPeli;
+    private JButton tasovalikko;
 
     private JButton suljeOhjelma;
 
     private Ui ui;
 
-    public MenuHiirenKuuntelija(JButton kaynnistaPeli, JButton suljeOhjelma, Ui ui) {
-        this.kaynnistaPeli = kaynnistaPeli;
+    public MenuHiirenKuuntelija(JButton tasovalikko, JButton suljeOhjelma, Ui ui) {
+        this.tasovalikko = tasovalikko;
         this.suljeOhjelma = suljeOhjelma;
         this.ui = ui;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == kaynnistaPeli) {
+        if (ae.getSource() == tasovalikko) {
             ui.getFrame().setVisible(false);
             ui.luoTasovalikko();
         } else if (ae.getSource() == suljeOhjelma) {
