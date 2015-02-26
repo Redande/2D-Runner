@@ -32,3 +32,6 @@ klo 16-23 Ohjelman kehittäminen demovaiheeseen asti
 
 20.2.15					
 klo 00-01 Uusi luokkakaavio, uusia sekvenssikaavioita
+
+26.2.15				
+klo 20-22:45 Ohjeet-nappi valikkoon, viimeisiä hienosäätöjä luokkiin
