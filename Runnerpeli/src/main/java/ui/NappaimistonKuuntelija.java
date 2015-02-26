@@ -1,17 +1,23 @@
-
 package ui;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import logiikka.Hahmo;
+
 /**
  * Luokka hahmon hyppäämistä varten.
+ *
  * @author Redande
  */
 public class NappaimistonKuuntelija implements KeyListener {
-    
+
     private Hahmo hahmo;
-    
+
+    /**
+     * Konstruktorissa alustetaan luokan hahmo-attribuutti.
+     *
+     * @param hahmo
+     */
     public NappaimistonKuuntelija(Hahmo hahmo) {
         this.hahmo = hahmo;
     }
@@ -19,10 +25,12 @@ public class NappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
     }
-/**
- * Jos painetaan välilyöntiä, hahmo hyppää
- * @param e 
- */
+
+    /**
+     * Jos painetaan välilyöntiä, hahmo hyppää.
+     *
+     * @param e
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
@@ -34,5 +42,5 @@ public class NappaimistonKuuntelija implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
     }
-    
+
 }

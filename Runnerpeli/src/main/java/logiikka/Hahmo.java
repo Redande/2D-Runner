@@ -2,7 +2,7 @@ package logiikka;
 
 /**
  * Luokassa toteutetaan hahmon logiikkapuoli.
- * 
+ *
  * @author Redande
  */
 public class Hahmo {
@@ -13,7 +13,10 @@ public class Hahmo {
     private int liikeY;
     private int leveys;
     private int korkeus;
-
+    
+    /**
+     * Konstruktorissa alustetaan hahmon attribuutit.
+     */
     public Hahmo() {
         this.x = 100;
         this.y = 475;
@@ -22,11 +25,11 @@ public class Hahmo {
         this.leveys = 25;
         this.korkeus = 25;
     }
-    
+
     public void setliikeY(int liikey) {
         this.liikeY = liikey;
     }
-    
+
     public int getliikeY() {
         return liikeY;
     }
@@ -47,36 +50,37 @@ public class Hahmo {
     public boolean getOnkoElossa() {
         return onkoElossa;
     }
-    
+
     public void setKoko(int leveys, int korkeus) {
         this.leveys = leveys;
         this.korkeus = korkeus;
     }
-    
+
     public int[] getKoko() {
         return new int[]{leveys, korkeus};
     }
-    
+
     /**
-    * Metodissa hoidetaan painovoiman vaikutus hahmoon, ja hyppäämisen alastulo
-    * @param painovoima 
-    */
-    public void liikkuuko(int painovoima) { 
+     * Metodissa hoidetaan painovoiman vaikutus hahmoon, ja hyppäämisen alastulo.
+     *
+     * @param painovoima
+     */
+    public void liikkuuko(int painovoima) {
         y -= liikeY;
-        
+
         liikeY -= painovoima;
         if (liikeY < -8) {
             liikeY = -8;
         }
-        
+
         if (y >= 475) {
             y = 475;
         }
     }
-    
+
     /**
-    * Metodissa toteutetaan hahmon hyppääminen
-    */
+     * Metodissa toteutetaan hahmon hyppääminen.
+     */
     public void hyppaa() {
         if (liikeY == -8 && y == 475) {
             liikeY = 16;

@@ -20,11 +20,22 @@ public class Ikkuna extends JPanel {
     private Sovelluslogiikka logiikka;
     private HahmonAnimaatio hahmo;
 
+    /**
+     * Konstruktorissa alustetaan ikkunan attribuutit.
+     *
+     * @param logiikka
+     */
     public Ikkuna(Sovelluslogiikka logiikka) {
         this.logiikka = logiikka;
         this.hahmo = new HahmonAnimaatio(logiikka.getHahmo());
     }
 
+    /**
+     * Metodissa piirretään hahmo, sekä piirretään ne esteet ja maali jotka ovat
+     * näkyvissä ruudulla.
+     *
+     * @param g
+     */
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -48,7 +59,7 @@ public class Ikkuna extends JPanel {
             g.setColor(Color.red);
             g.fillOval(hahmo.getSijainti()[0], hahmo.getSijainti()[1], hahmo.getKoko()[0], hahmo.getKoko()[1]);
         }
-        
+
         Maali maali = logiikka.getTaso().getMaali();
         if (maali.onkoRuudulla()) {
             g.setColor(Color.GREEN);
@@ -57,7 +68,7 @@ public class Ikkuna extends JPanel {
 
         getToolkit().sync();
     }
-    
+
     public HahmonAnimaatio getHahmo() {
         return hahmo;
     }

@@ -60,10 +60,17 @@ public class SovelluslogiikkaTest {
     }
     
     @Test
-    public void toimiikoTormaako() {
+    public void toimiikoTormaakoHahmo() {
         logiikka.getTaso().lisaaEste(new Este(100, 475, 25, 25, 5));
-        logiikka.tormaako();
+        logiikka.tormaakoHahmo();
         assertEquals(false, logiikka.getHahmo().getOnkoElossa());
-        assertEquals(true, logiikka.tormaako());
+        assertEquals(true, logiikka.tormaakoHahmo());
+    }
+    
+    @Test
+    public void toimiikoTormaako() {
+        Este uusi = new Este(100, 475, 25, 25, 5);
+        logiikka.getTaso().lisaaEste(uusi);
+        assertEquals(true, logiikka.tormaako(logiikka.getHahmo().getSijainti(), logiikka.getHahmo().getKoko(), uusi.getSijainti(), uusi.getKoko()));
     }
 }
