@@ -25,6 +25,7 @@ public class Ui implements Runnable {
     private Ikkuna ikkuna;
     private Sovelluslogiikka logiikka;
     private Pelimoottori moottori;
+    private JFrame vanhaframe;
 
     public Ui(Sovelluslogiikka logiikka) {
         this.logiikka = logiikka;
@@ -230,6 +231,7 @@ public class Ui implements Runnable {
         ikkuna.repaint();
         if (logiikka.getPeliloppui()) {
             moottori.sammuta();
+            vanhaframe = frame;
             pelinjalkeinenMenu();
             return;
         }
@@ -237,6 +239,10 @@ public class Ui implements Runnable {
 
     public JFrame getFrame() {
         return frame;
+    }
+    
+    public JFrame getVanhaframe() {
+        return vanhaframe;
     }
     
     public Sovelluslogiikka getLogiikka() {

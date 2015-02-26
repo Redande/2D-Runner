@@ -24,10 +24,12 @@ class PelinjalkeinenMenuHiirenKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == uusiPeli) {
+            ui.getVanhaframe().setVisible(false);
             ui.getFrame().setVisible(false);
             Ui uusi = new Ui(new Sovelluslogiikka());
             uusi.kaynnistaEnsimmainenTaso();
         } else if (ae.getSource() == takaisinMenuun) {
+            ui.getVanhaframe().setVisible(false);
             ui.getFrame().setVisible(false);
             Ui uusi = new Ui(new Sovelluslogiikka());
             uusi.luoMenu();
